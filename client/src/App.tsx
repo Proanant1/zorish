@@ -3,14 +3,75 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/lib/theme";
+import { AuthProvider, useAuth } from "@/lib/auth";
 import NotFound from "@/pages/not-found";
+import AuthPage from "@/pages/auth";
+import ResetPasswordPage from "@/pages/reset-password";
+import FeedPage from "@/pages/feed";
+import TrendingPage from "@/pages/trending";
+import SearchPage from "@/pages/search";
+import ChatPage from "@/pages/chat";
+import ConversationPage from "@/pages/conversation";
+import ProfilePage from "@/pages/profile";
+import UserProfilePage from "@/pages/user-profile";
+import BookmarksPage from "@/pages/bookmarks";
+import CreatorStudioPage from "@/pages/creator-studio";
+import SettingsPage from "@/pages/settings";
+import PrivacyPage from "@/pages/privacy";
+import LanguagePage from "@/pages/language";
+import NotificationPrefsPage from "@/pages/notification-prefs";
+import BlockedUsersPage from "@/pages/blocked";
+import HelpPage from "@/pages/help";
+import AboutPage from "@/pages/about";
+import DonatePage from "@/pages/donate";
+import GetVerifiedPage from "@/pages/get-verified";
+import NotificationsPage from "@/pages/notifications";
+import ReelsPage from "@/pages/reels";
+import logoImg from "@assets/Convert_to_PNG_project1_1771827032078.png";
 
-function Router() {
+function AuthenticatedRouter() {
+  const { user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-3">
+          <img src={logoImg} alt="Freefinity India" className="h-12 w-12 rounded-xl animate-pulse object-contain" />
+          <p className="text-sm text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    if (window.location.pathname === "/reset-password") return <ResetPasswordPage />;
+    return <AuthPage />;
+  }
+
   return (
     <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
+      <Route path="/" component={FeedPage} />
+      <Route path="/trending" component={TrendingPage} />
+      <Route path="/notifications" component={NotificationsPage} />
+      <Route path="/search" component={SearchPage} />
+      <Route path="/chat" component={ChatPage} />
+      <Route path="/chat/:userId" component={ConversationPage} />
+      <Route path="/profile" component={ProfilePage} />
+      <Route path="/user/:username" component={UserProfilePage} />
+      <Route path="/bookmarks" component={BookmarksPage} />
+      <Route path="/creator-studio" component={CreatorStudioPage} />
+      <Route path="/settings" component={SettingsPage} />
+      <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/language" component={LanguagePage} />
+      <Route path="/notification-prefs" component={NotificationPrefsPage} />
+      <Route path="/blocked" component={BlockedUsersPage} />
+      <Route path="/help" component={HelpPage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/donate" component={DonatePage} />
+      <Route path="/get-verified" component={GetVerifiedPage} />
+      <Route path="/reels" component={ReelsPage} />
+      <Route path="/reset-password" component={ResetPasswordPage} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -19,10 +80,14 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <AuthProvider>
+            <Toaster />
+            <AuthenticatedRouter />
+          </AuthProvider>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
