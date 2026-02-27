@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AppLayout } from "@/components/app-layout";
 import { PostCard } from "@/components/post-card";
 import { AdCard } from "@/components/ad-card";
+import { AdSenseUnit } from "@/components/adsense-unit";
 import { CreatePost } from "@/components/create-post";
 import { PostSkeleton } from "@/components/post-skeleton";
 import { StoryBar } from "@/components/story-bar";
@@ -13,6 +14,7 @@ import type { PostWithUser } from "@shared/schema";
 import { FEED_ADS, getAdForIndex } from "@/lib/ad-data";
 
 const AD_FREQUENCY = 8;
+const ADSENSE_SLOT_ID = import.meta.env.VITE_ADSENSE_SLOT_ID as string | undefined;
 
 type FeedTab = "foryou" | "following" | "groups";
 
@@ -68,8 +70,12 @@ function renderFeedWithAds(posts: PostWithUser[], adFree: boolean) {
   posts.forEach((post, index) => {
     items.push(<PostCard key={post.id} post={post} />);
     if (!adFree && (index + 1) % AD_FREQUENCY === 0) {
-      const ad = getAdForIndex(adCount, FEED_ADS);
-      items.push(<AdCard key={`ad-${adCount}-${index}`} ad={ad} />);
+      if (ADSENSE_SLOT_ID) {
+        items.push(<AdSenseUnit key={`adsense-${adCount}-${index}`} slotId={ADSENSE_SLOT_ID} adIndex={adCount} />);
+      } else {
+        const ad = getAdForIndex(adCount, FEED_ADS);
+        items.push(<AdCard key={`ad-${adCount}-${index}`} ad={ad} />);
+      }
       adCount++;
     }
   });

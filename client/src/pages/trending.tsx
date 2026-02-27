@@ -12,8 +12,10 @@ import { Link } from "wouter";
 import type { PostWithUser, Hashtag } from "@shared/schema";
 import { useAuth } from "@/lib/auth";
 import { EXPLORE_ADS, getAdForIndex } from "@/lib/ad-data";
+import { AdSenseUnit } from "@/components/adsense-unit";
 
 const EXPLORE_AD_FREQUENCY = 10;
+const ADSENSE_SLOT_ID = import.meta.env.VITE_ADSENSE_SLOT_ID as string | undefined;
 
 export default function TrendingPage() {
   const { user } = useAuth();
@@ -102,8 +104,12 @@ export default function TrendingPage() {
             const nodes = [<PostCard key={post.id} post={post} />] as JSX.Element[];
             if (!adFree && (index + 1) % EXPLORE_AD_FREQUENCY === 0) {
               const adIdx = Math.floor((index + 1) / EXPLORE_AD_FREQUENCY) - 1;
-              const ad = getAdForIndex(adIdx, EXPLORE_ADS);
-              nodes.push(<AdCard key={`exp-ad-${index}`} ad={ad} />);
+              if (ADSENSE_SLOT_ID) {
+                nodes.push(<AdSenseUnit key={`adsense-exp-${index}`} slotId={ADSENSE_SLOT_ID} adIndex={adIdx} />);
+              } else {
+                const ad = getAdForIndex(adIdx, EXPLORE_ADS);
+                nodes.push(<AdCard key={`exp-ad-${index}`} ad={ad} />);
+              }
             }
             return nodes;
           })}
