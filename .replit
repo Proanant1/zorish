@@ -39,3 +39,8 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[userenv]
+
+[userenv.shared]
+VITE_ADSENSE_SLOT_ID = "6529489836"
