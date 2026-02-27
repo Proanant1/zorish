@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearch } from "wouter";
 import { AppLayout } from "@/components/app-layout";
 import { PostCard } from "@/components/post-card";
+import { AdCard } from "@/components/ad-card";
 import { PostSkeleton } from "@/components/post-skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,8 +10,14 @@ import { TrendingUp, Hash } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 import type { PostWithUser, Hashtag } from "@shared/schema";
+import { useAuth } from "@/lib/auth";
+import { EXPLORE_ADS, getAdForIndex } from "@/lib/ad-data";
+
+const EXPLORE_AD_FREQUENCY = 10;
 
 export default function TrendingPage() {
+  const { user } = useAuth();
+  const adFree = !!(user && user.subscriptionStatus && user.subscriptionStatus !== "none");
   const search = useSearch();
   const params = new URLSearchParams(search);
   const activeTag = params.get("tag");
@@ -91,7 +98,15 @@ export default function TrendingPage() {
               ))}
             </div>
           )}
-          {posts?.map((post) => <PostCard key={post.id} post={post} />)}
+          {posts?.flatMap((post, index) => {
+            const nodes = [<PostCard key={post.id} post={post} />] as JSX.Element[];
+            if (!adFree && (index + 1) % EXPLORE_AD_FREQUENCY === 0) {
+              const adIdx = Math.floor((index + 1) / EXPLORE_AD_FREQUENCY) - 1;
+              const ad = getAdForIndex(adIdx, EXPLORE_ADS);
+              nodes.push(<AdCard key={`exp-ad-${index}`} ad={ad} />);
+            }
+            return nodes;
+          })}
           {posts?.length === 0 && (
             <div className="flex flex-col items-center justify-center py-20 px-4 text-center">
               <Hash className="h-12 w-12 text-muted-foreground mb-3" />

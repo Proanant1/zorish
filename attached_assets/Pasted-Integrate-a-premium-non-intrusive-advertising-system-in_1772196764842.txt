@@ -1,0 +1,110 @@
+Integrate a premium, non-intrusive advertising system into the social media platform “Zorish – Apna Social Space”.
+
+The ads must NOT look spammy, flashy, or cheap.
+Maintain the Cosmic Premium Dark theme.
+
+-------------------------------------
+AD DESIGN PRINCIPLES
+-------------------------------------
+
+• Ads must blend naturally into the feed.
+• No banner ads.
+• No pop-up interstitial ads.
+• No flashing or bright external colors.
+• Maintain same card design as normal posts.
+• Ad density: 1 ad per 8 posts maximum.
+• Clearly label ads with a small “Sponsored” tag.
+
+-------------------------------------
+NATIVE FEED AD IMPLEMENTATION
+-------------------------------------
+
+Insert sponsored posts inside the main feed.
+
+Placement logic:
+After every 8 organic posts, insert 1 sponsored post.
+
+Sponsored Post Design:
+
+Card Background:
+#121A3A
+
+Border:
+rgba(255,255,255,0.08)
+
+Border Radius:
+16px
+
+Header:
+Profile image (brand logo)
+Brand name
+Small muted “Sponsored” label in gold (#F5B041)
+
+Content:
+Image or short text content
+Optional CTA button
+
+CTA Button:
+Background: #F5B041
+Text: #0B1026
+Rounded (20px)
+
+No external bright ad styling allowed.
+
+-------------------------------------
+MOBILE AD RULES
+-------------------------------------
+
+• Do not place ads at the very top of feed.
+• First ad appears only after user scrolls.
+• Maintain smooth scroll performance.
+• Avoid layout shifts.
+
+-------------------------------------
+EXPLORE PAGE ADS
+-------------------------------------
+
+Allow sponsored content on Explore page.
+
+Placement:
+1 sponsored card per 10 content cards.
+
+Same design style as feed ads.
+
+-------------------------------------
+STORY ADS (OPTIONAL)
+-------------------------------------
+
+Insert sponsored story between organic stories.
+
+Display small “Ad” badge in top corner.
+No forced full-screen video ads.
+
+-------------------------------------
+BACKEND LOGIC
+-------------------------------------
+
+Create ad flag system:
+Each feed item should have:
+isSponsored: boolean
+
+If true:
+Render sponsored layout.
+
+Ensure ads are dynamically inserted based on frequency rules.
+
+-------------------------------------
+PREMIUM SUBSCRIPTION LOGIC
+-------------------------------------
+
+If user has premium subscription:
+Do not render ads.
+
+-------------------------------------
+IMPORTANT
+-------------------------------------
+
+Ads must feel native, elegant, and consistent with Zorish brand.
+
+The UI must still feel like a premium startup product.
+Not like a low-budget ad-heavy app.

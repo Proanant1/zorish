@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AppLayout } from "@/components/app-layout";
 import { PostCard } from "@/components/post-card";
+import { AdCard } from "@/components/ad-card";
 import { CreatePost } from "@/components/create-post";
 import { PostSkeleton } from "@/components/post-skeleton";
 import { StoryBar } from "@/components/story-bar";
@@ -9,6 +10,9 @@ import { useAuth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 import { Users, UserCheck, LayoutGrid } from "lucide-react";
 import type { PostWithUser } from "@shared/schema";
+import { FEED_ADS, getAdForIndex } from "@/lib/ad-data";
+
+const AD_FREQUENCY = 8;
 
 type FeedTab = "foryou" | "following" | "groups";
 
@@ -31,9 +35,7 @@ function FeedTabBar({ active, onChange }: { active: FeedTab; onChange: (tab: Fee
               onClick={() => onChange(tab.id)}
               className={cn(
                 "flex-1 flex flex-col items-center justify-center gap-1 py-3 text-sm font-medium transition-colors relative",
-                isActive
-                  ? "text-foreground"
-                  : "text-muted-foreground"
+                isActive ? "text-foreground" : "text-muted-foreground"
               )}
             >
               <span className="hidden sm:flex items-center gap-1.5">
@@ -54,10 +56,32 @@ function FeedTabBar({ active, onChange }: { active: FeedTab; onChange: (tab: Fee
   );
 }
 
+function useIsAdFree() {
+  const { user } = useAuth();
+  return !!(user && user.subscriptionStatus && user.subscriptionStatus !== "none");
+}
+
+function renderFeedWithAds(posts: PostWithUser[], adFree: boolean) {
+  const items: React.ReactNode[] = [];
+  let adCount = 0;
+
+  posts.forEach((post, index) => {
+    items.push(<PostCard key={post.id} post={post} />);
+    if (!adFree && (index + 1) % AD_FREQUENCY === 0) {
+      const ad = getAdForIndex(adCount, FEED_ADS);
+      items.push(<AdCard key={`ad-${adCount}-${index}`} ad={ad} />);
+      adCount++;
+    }
+  });
+
+  return items;
+}
+
 function ForYouFeed() {
   const { data: posts, isLoading } = useQuery<PostWithUser[]>({
     queryKey: ["/api/posts"],
   });
+  const adFree = useIsAdFree();
 
   return (
     <>
@@ -70,7 +94,9 @@ function ForYouFeed() {
           ))}
         </div>
       ) : posts && posts.length > 0 ? (
-        posts.map((post) => <PostCard key={post.id} post={post} />)
+        <div data-testid="feed-posts-list">
+          {renderFeedWithAds(posts, adFree)}
+        </div>
       ) : (
         <EmptyState
           icon={<LayoutGrid className="h-8 w-8 text-muted-foreground" />}
@@ -88,6 +114,7 @@ function FollowingFeed() {
     queryKey: ["/api/posts/following"],
     enabled: !!user,
   });
+  const adFree = useIsAdFree();
 
   if (!user) {
     return (
@@ -108,7 +135,9 @@ function FollowingFeed() {
           ))}
         </div>
       ) : posts && posts.length > 0 ? (
-        posts.map((post) => <PostCard key={post.id} post={post} />)
+        <div data-testid="feed-following-posts-list">
+          {renderFeedWithAds(posts, adFree)}
+        </div>
       ) : (
         <EmptyState
           icon={<UserCheck className="h-8 w-8 text-muted-foreground" />}
