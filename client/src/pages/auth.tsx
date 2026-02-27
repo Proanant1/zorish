@@ -59,7 +59,7 @@ function CommunityAvatars() {
         </div>
       ))}
       <p style={{ marginLeft: "14px", fontSize: "12px", color: "#737373", fontWeight: 400 }}>
-        Join <span style={{ color: "#F5B041", fontWeight: 600 }}>10M+</span> creators
+        <span style={{ color: "#F5B041", fontWeight: 600 }}>Where India Connects</span>
       </p>
     </div>
   );
@@ -476,7 +476,7 @@ export default function AuthPage() {
                   <span style={{ fontSize: "12px", color: "#737373", fontWeight: 500 }}>Sign Up to Zorish</span>
                 </div>
                 <h2 style={{ fontSize: "24px", fontWeight: 700, color: "#F5F5F5", letterSpacing: "-0.01em", marginBottom: "4px" }}>Create your account</h2>
-                <p style={{ fontSize: "13px", color: "#737373" }}>Join 10M+ creators on Apna Social Space</p>
+                <p style={{ fontSize: "13px", color: "#737373" }}>Apna Social Space for real connections</p>
               </div>
 
               <form onSubmit={handleRegister} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
