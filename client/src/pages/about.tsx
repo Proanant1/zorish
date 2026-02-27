@@ -2,24 +2,14 @@ import { AppLayout } from "@/components/app-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, MapPin, Globe, Star, Shield, Users, Zap } from "lucide-react";
+import zorishLogoUrl from "@assets/zorish-z.svg";
 
 export default function AboutPage() {
   return (
     <AppLayout title="About">
       <div className="px-4 py-6 space-y-6">
         <div className="flex flex-col items-center text-center py-6">
-          <div
-            className="h-20 w-20 rounded-2xl flex items-center justify-center text-5xl font-black mb-4"
-            style={{
-              background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
-              border: '1px solid rgba(245,176,65,0.35)',
-              color: '#F5B041',
-              boxShadow: '0 0 24px rgba(245,176,65,0.18)',
-            }}
-            data-testid="img-about-logo"
-          >
-            Z
-          </div>
+          <img src={zorishLogoUrl} alt="Zorish" className="h-20 w-20 mb-4" data-testid="img-about-logo" />
           <h2 className="text-2xl font-bold gold-text" data-testid="text-about-title">Zorish</h2>
           <p className="text-sm text-muted-foreground mt-0.5 italic">Apna Social Space</p>
           <p className="text-sm text-muted-foreground mt-1">Version 1.0.0</p>

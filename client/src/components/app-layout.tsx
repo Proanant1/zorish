@@ -9,6 +9,7 @@ import { Moon, Sun, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import zorishLogoUrl from "@assets/zorish-z.svg";
 
 const avatarColors = [
   "bg-orange-500", "bg-emerald-500", "bg-violet-500", "bg-sky-500",
@@ -99,17 +100,11 @@ export function AppLayout({ children, title }: { children: React.ReactNode; titl
           <div className="absolute left-1/2 -translate-x-1/2">
             {isHome ? (
               <div className="flex items-center gap-2">
-                <div
-                  className="h-8 w-8 rounded-lg flex items-center justify-center text-lg font-black shrink-0"
-                  style={{
-                    background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
-                    border: '1px solid rgba(245,176,65,0.30)',
-                    color: '#F5B041',
-                    boxShadow: '0 0 10px rgba(245,176,65,0.15)',
-                  }}
-                >
-                  Z
-                </div>
+                <img
+                  src={zorishLogoUrl}
+                  alt="Zorish"
+                  className="h-7 w-7 shrink-0"
+                />
                 <h1 className="text-lg font-bold tracking-tight gold-text">Zorish</h1>
               </div>
             ) : (

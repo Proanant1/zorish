@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, Link } from "wouter";
-import { Home, Search, User, Bell, Clapperboard } from "lucide-react";
+import { Home, Search, User, MessageCircle, Clapperboard } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EditProfileDialog } from "@/components/edit-profile-dialog";
 import { useAuth } from "@/lib/auth";
@@ -9,7 +9,7 @@ import { useAuth } from "@/lib/auth";
 const navItems = [
   { path: "/", icon: Home, label: "Home" },
   { path: "/reels", icon: Clapperboard, label: "Reels" },
-  { path: "/notifications", icon: Bell, label: "Alerts" },
+  { path: "/chat", icon: MessageCircle, label: "Chat" },
   { path: "/search", icon: Search, label: "Search" },
 ];
 
@@ -18,12 +18,12 @@ export function BottomNav() {
   const [editOpen, setEditOpen] = useState(false);
   const { user } = useAuth();
 
-  const { data: notifCountData } = useQuery<{ count: number }>({
-    queryKey: ["/api/notifications/count"],
+  const { data: unreadData } = useQuery<{ count: number }>({
+    queryKey: ["/api/messages/unread/count"],
     refetchInterval: 30000,
     enabled: !!user,
   });
-  const unreadCount = notifCountData?.count ?? 0;
+  const unreadCount = unreadData?.count ?? 0;
 
   return (
     <>
@@ -42,7 +42,7 @@ export function BottomNav() {
                 >
                   <span className="relative">
                     <item.icon className={cn("h-5 w-5", isActive && "stroke-[2.5px]")} />
-                    {item.path === "/notifications" && unreadCount > 0 && (
+                    {item.path === "/chat" && unreadCount > 0 && (
                       <span className="absolute -top-1.5 -right-1.5 h-4 min-w-4 flex items-center justify-center rounded-full bg-green-500 text-white text-[10px] font-bold px-0.5">
                         {unreadCount > 9 ? "9+" : unreadCount}
                       </span>

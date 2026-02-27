@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import zorishLogoUrl from "@assets/zorish-z.svg";
 
 const avatarColors = [
   "bg-orange-500", "bg-emerald-500", "bg-violet-500", "bg-sky-500",
@@ -78,17 +79,11 @@ export function Sidebar() {
         <div className="px-5 py-5">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer" data-testid="sidebar-logo">
-              <div
-                className="h-10 w-10 rounded-xl flex items-center justify-center text-2xl font-black shrink-0 relative"
-                style={{
-                  background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
-                  border: '1px solid rgba(245,176,65,0.35)',
-                  color: '#F5B041',
-                  boxShadow: '0 0 14px rgba(245,176,65,0.18)',
-                }}
-              >
-                Z
-              </div>
+              <img
+                src={zorishLogoUrl}
+                alt="Zorish"
+                className="h-9 w-9 shrink-0"
+              />
               <div className="min-w-0">
                 <span className="text-xl font-bold tracking-tight block gold-text">Zorish</span>
                 <span className="text-[10px] text-muted-foreground leading-none">Apna Social Space</span>

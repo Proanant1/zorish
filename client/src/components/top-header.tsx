@@ -1,6 +1,7 @@
 import { useTheme } from "@/lib/theme";
 import { Moon, Sun, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import zorishLogoUrl from "@assets/zorish-z.svg";
 
 export function TopHeader({ title }: { title?: string }) {
   const { theme, toggleTheme } = useTheme();
@@ -9,17 +10,11 @@ export function TopHeader({ title }: { title?: string }) {
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-xl" data-testid="header-top">
       <div className="mx-auto flex h-14 max-w-lg items-center justify-between gap-1 px-4">
         <div className="flex items-center gap-2">
-          <div
-            className="h-8 w-8 rounded-lg flex items-center justify-center text-lg font-black shrink-0"
-            style={{
-              background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
-              border: '1px solid rgba(245,176,65,0.30)',
-              color: '#F5B041',
-              boxShadow: '0 0 10px rgba(245,176,65,0.15)',
-            }}
-          >
-            Z
-          </div>
+          <img
+            src={zorishLogoUrl}
+            alt="Zorish"
+            className="h-7 w-7 shrink-0"
+          />
           <h1 className="text-lg font-bold tracking-tight gold-text">
             {title || "Zorish"}
           </h1>
