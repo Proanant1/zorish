@@ -1,0 +1,187 @@
+Rebrand the entire platform from “Freefinity India” to:
+
+New Brand Name: Zorish
+Tagline: Apna Social Space
+
+Remove all references to:
+- Freefinity
+- Freefinity India
+- Old logo icon
+
+Replace them with:
+Zorish
+
+-------------------------------------
+THEME TRANSFORMATION
+-------------------------------------
+
+Remove the current black + orange gaming-style theme.
+
+Remove:
+- Heavy orange glow backgrounds
+- Particle effects
+- Excessive gradient overlays
+- Strong orange highlight bars
+
+Apply a Cosmic Premium Dark Theme with Simple UX.
+
+-------------------------------------
+NEW COLOR SYSTEM
+-------------------------------------
+
+Primary Background:
+#0B1026 (Deep Midnight Navy)
+
+Secondary Background / Cards:
+#121A3A
+
+Accent Gold:
+#F5B041
+
+Soft Glow Shadow:
+rgba(245, 176, 65, 0.12)
+
+Primary Text:
+#F5F7FA
+
+Secondary Text:
+#9BA3AF
+
+Borders:
+rgba(255,255,255,0.08)
+
+-------------------------------------
+SIDEBAR UPDATE
+-------------------------------------
+
+• Change logo area to:
+  Bold golden "Z" icon
+  Text: Zorish
+  Subtext (small): Apna Social Space
+
+• Active menu item:
+  Dark card background (#121A3A)
+  Gold icon
+  No orange highlight
+
+• Remove bright orange background highlight.
+• Keep sidebar minimal and clean.
+
+-------------------------------------
+TOP NAVIGATION UPDATE
+-------------------------------------
+
+Replace orange underline tab indicator with:
+Gold underline (#F5B041)
+
+Tabs:
+For You | Matched | Groups
+
+Active tab:
+Gold text
+Thin gold underline
+
+Inactive tab:
+#9BA3AF
+
+-------------------------------------
+POST CARD REDESIGN
+-------------------------------------
+
+• Background: #121A3A
+• Border radius: 16px
+• Remove orange glow edges
+• Subtle border (very light)
+• No heavy lighting effect
+
+Hashtags:
+Replace teal chips with:
+Transparent background
+Gold border
+Text color: Gold
+
+-------------------------------------
+BUTTON STYLE
+-------------------------------------
+
+Primary Buttons:
+Background: #F5B041
+Text: #0B1026
+Rounded (20px)
+Soft glow shadow
+
+Secondary Buttons:
+Transparent
+Gold border
+Gold text
+
+-------------------------------------
+BOTTOM NAVIGATION (Mobile)
+-------------------------------------
+
+Background: #0B1026
+Active icon: Gold
+Inactive icon: #9BA3AF
+Remove orange highlight fill.
+
+-------------------------------------
+TYPOGRAPHY
+-------------------------------------
+
+Use modern clean sans-serif (Inter / Poppins style).
+
+Headings: Semi-bold
+Body: Regular
+No extra font weights.
+
+-------------------------------------
+ICON STYLE
+-------------------------------------
+
+Minimal line icons
+No filled orange icons
+Use gold only for active states.
+
+-------------------------------------
+BACKGROUND STYLE
+-------------------------------------
+
+Remove heavy sparkle/particle background.
+
+Optional:
+Add very subtle space texture (barely visible).
+Keep it elegant and premium.
+
+-------------------------------------
+UX PRINCIPLES
+-------------------------------------
+
+• Reduce visual noise
+• Increase white space
+• Maintain clean alignment
+• Make tap targets larger
+• Improve readability
+• Prioritize performance
+
+-------------------------------------
+APP ICON
+-------------------------------------
+
+Create new app icon:
+
+Background: Deep Navy (#0B1026)
+Center: Bold Golden Letter "Z"
+Thin silver orbit ring
+Very subtle glow
+No text inside icon
+
+-------------------------------------
+TONE UPDATE
+-------------------------------------
+
+Replace any overly flashy tone with:
+
+Friendly
+Modern
+Indian community focused
+Premium but approachable

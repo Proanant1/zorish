@@ -37,9 +37,9 @@ export default function DonatePage() {
           <div className="mx-auto h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
             <Heart className="h-7 w-7 text-primary" />
           </div>
-          <h2 className="text-xl font-bold" data-testid="text-donate-title">Support Freefinity India</h2>
+          <h2 className="text-xl font-bold" data-testid="text-donate-title">Support Zorish</h2>
           <p className="text-sm text-muted-foreground max-w-sm mx-auto">
-            Help us build India's own social media platform. Every contribution keeps Freefinity India running and growing.
+            Help us build India's own premium social space. Every contribution keeps Zorish running and growing.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function DonatePage() {
 
         <div className="text-center pt-4 pb-6">
           <p className="text-xs text-muted-foreground">
-            Thank you for supporting Freefinity India! Your contribution helps us build a better platform for India.
+            Thank you for supporting Zorish! Your contribution helps us build a better platform for India.
           </p>
         </div>
       </div>

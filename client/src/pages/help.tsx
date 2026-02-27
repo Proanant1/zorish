@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 const faqItems = [
   {
-    q: "What is Freefinity India?",
-    a: "Freefinity India is an India-focused social media platform representing Freedom Without Limits for India. Share posts, connect with other users through Match (follow), and engage with trending content across India.",
+    q: "What is Zorish?",
+    a: "Zorish is India's premium social media platform — Apna Social Space. Share posts, connect with other users through Match (follow), and engage with trending content across India.",
   },
   {
     q: "What does 'Match' mean?",
@@ -115,7 +115,7 @@ export default function HelpPage() {
               <div className="p-3 rounded-lg bg-muted/50">
                 <h4 className="text-sm font-semibold mb-1">Community Guidelines</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Freefinity India is committed to creating a safe, respectful community for all users.
+                  Zorish is committed to creating a safe, respectful community for all users.
                   Please be respectful, avoid hate speech, misinformation, and harassment.
                   Content that violates Indian law or promotes illegal activities is strictly prohibited.
                 </p>
@@ -123,7 +123,7 @@ export default function HelpPage() {
               <div className="p-3 rounded-lg bg-muted/50">
                 <h4 className="text-sm font-semibold mb-1">Terms of Service</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  By using Freefinity India, you agree to our terms of service. You must be 13 years
+                  By using Zorish, you agree to our terms of service. You must be 13 years
                   or older to use this platform. You are responsible for the content you post.
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function HelpPage() {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 In compliance with the Information Technology (Intermediary Guidelines and Digital Media
                 Ethics Code) Rules, 2021, our Grievance Officer can be reached at
-                <a href="mailto:grievance@freefinityindia.app" className="text-primary ml-1">grievance@freefinityindia.app</a>.
+                <a href="mailto:grievance@zorish.app" className="text-primary ml-1">grievance@zorish.app</a>.
                 We aim to respond to all grievances within 24 hours and resolve them within 15 days.
               </p>
             </div>

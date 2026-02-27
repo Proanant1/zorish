@@ -50,7 +50,7 @@ export default function LanguagePage() {
       <div className="px-4 py-6 space-y-6">
         <div>
           <h2 className="text-xl font-bold" data-testid="text-language-title">Language</h2>
-          <p className="text-sm text-muted-foreground mt-1">Choose your preferred language for Freefinity India</p>
+          <p className="text-sm text-muted-foreground mt-1">Choose your preferred language for Zorish</p>
         </div>
 
         <Card>

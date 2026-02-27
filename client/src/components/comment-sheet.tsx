@@ -160,7 +160,7 @@ export function CommentSheet({ postId, open, onClose, onCommentAdded }: CommentS
                 size="sm"
                 onClick={handleSubmit}
                 disabled={!commentText.trim() || addCommentMutation.isPending}
-                className="gap-2 saffron-gradient text-white border-none"
+                className="gap-2 gold-gradient text-foreground border-none font-semibold"
                 data-testid="button-submit-comment"
               >
                 <Send className="h-3.5 w-3.5" />

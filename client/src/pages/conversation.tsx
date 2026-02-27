@@ -326,10 +326,8 @@ export default function ConversationPage() {
     <div className="flex flex-col h-screen bg-background relative">
       {theme === "dark" && (
         <>
-          <div className="bokeh-bg" aria-hidden="true" />
-          <div className="bokeh-orbs" aria-hidden="true" />
+          <div className="cosmic-bg" aria-hidden="true" />
           <div className="vignette-overlay" aria-hidden="true" />
-          <div className="dof-overlay" aria-hidden="true" />
         </>
       )}
 

@@ -28,8 +28,6 @@ import DonatePage from "@/pages/donate";
 import GetVerifiedPage from "@/pages/get-verified";
 import NotificationsPage from "@/pages/notifications";
 import ReelsPage from "@/pages/reels";
-import logoImg from "@assets/Convert_to_PNG_project1_1771827032078.png";
-
 function AuthenticatedRouter() {
   const { user, isLoading } = useAuth();
 
@@ -37,7 +35,17 @@ function AuthenticatedRouter() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-3">
-          <img src={logoImg} alt="Freefinity India" className="h-12 w-12 rounded-xl animate-pulse object-contain" />
+          <div
+            className="h-12 w-12 rounded-xl flex items-center justify-center text-3xl font-black animate-pulse"
+            style={{
+              background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
+              border: '1px solid rgba(245,176,65,0.35)',
+              color: '#F5B041',
+              boxShadow: '0 0 16px rgba(245,176,65,0.18)',
+            }}
+          >
+            Z
+          </div>
           <p className="text-sm text-muted-foreground">Loading...</p>
         </div>
       </div>

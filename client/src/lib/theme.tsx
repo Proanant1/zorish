@@ -8,7 +8,7 @@ const ThemeContext = createContext<ThemeContextType>({ theme: "dark", toggleThem
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      return (localStorage.getItem("freefinity-theme") as Theme) || "dark";
+      return (localStorage.getItem("zorish-theme") as Theme) || "dark";
     }
     return "dark";
   });
@@ -20,7 +20,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("freefinity-theme", theme);
+    localStorage.setItem("zorish-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));

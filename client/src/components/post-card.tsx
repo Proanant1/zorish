@@ -262,10 +262,10 @@ export function PostCard({ post }: { post: PostWithUser }) {
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/user/${post.user.username}`;
-    const shareText = `"${post.content.slice(0, 100)}${post.content.length > 100 ? "..." : ""}" — ${post.user.displayName} on Freefinity India`;
+    const shareText = `"${post.content.slice(0, 100)}${post.content.length > 100 ? "..." : ""}" — ${post.user.displayName} on Zorish`;
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Freefinity India", text: shareText, url: shareUrl });
+        await navigator.share({ title: "Zorish", text: shareText, url: shareUrl });
         return;
       } catch { }
     }

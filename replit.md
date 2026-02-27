@@ -1,4 +1,4 @@
-# Social Media Hub
+# Zorish — Apna Social Space
 
 A full-stack social media community platform built with React, Express, and PostgreSQL.
 

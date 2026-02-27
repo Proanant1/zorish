@@ -615,7 +615,7 @@ export default function ProfilePage() {
         <AlertDialogContent data-testid="dialog-logout">
           <AlertDialogHeader>
             <AlertTitle>Logout</AlertTitle>
-            <AlertDialogDescription>Are you sure you want to logout of Freefinity India?</AlertDialogDescription>
+            <AlertDialogDescription>Are you sure you want to logout of Zorish?</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel data-testid="button-cancel-logout">Cancel</AlertDialogCancel>

@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Eye, EyeOff, CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { useLocation } from "wouter";
-import logoImg from "@assets/Convert_to_PNG_project1_1771827032078.png";
 
 export default function ResetPasswordPage() {
   const [, setLocation] = useLocation();
@@ -56,15 +55,19 @@ export default function ResetPasswordPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
-          <img
-            src={logoImg}
-            alt="Freefinity India"
-            className="mx-auto h-20 w-20 rounded-2xl object-contain drop-shadow-[0_0_20px_rgba(255,122,24,0.5)]"
-          />
-          <h1 className="text-3xl font-bold tracking-tight">
-            <span className="saffron-text">Free</span>finity India
-          </h1>
-          <p className="text-sm text-muted-foreground italic">Your Voice. Your Bharat. No Limits.</p>
+          <div
+            className="mx-auto h-20 w-20 rounded-2xl flex items-center justify-center text-5xl font-black"
+            style={{
+              background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
+              border: '1px solid rgba(245,176,65,0.35)',
+              color: '#F5B041',
+              boxShadow: '0 0 24px rgba(245,176,65,0.18)',
+            }}
+          >
+            Z
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight gold-text">Zorish</h1>
+          <p className="text-sm text-muted-foreground italic">Apna Social Space</p>
         </div>
 
         <Card>

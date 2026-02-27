@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/Convert_to_PNG_project1_1771827032078.png";
 
 const avatarColors = [
   "bg-orange-500", "bg-emerald-500", "bg-violet-500", "bg-sky-500",
@@ -66,7 +65,7 @@ export function Sidebar() {
   const handleShare = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Freefinity India", text: "Check out Freefinity India!", url: window.location.origin });
+        await navigator.share({ title: "Zorish", text: "Check out Zorish — Apna Social Space!", url: window.location.origin });
       } catch {}
     } else {
       await navigator.clipboard.writeText(window.location.origin);
@@ -78,15 +77,22 @@ export function Sidebar() {
       <aside className="hidden lg:flex fixed left-0 top-0 bottom-0 w-[260px] flex-col border-r bg-background z-50" data-testid="sidebar-desktop">
         <div className="px-5 py-5">
           <Link href="/">
-            <div className="flex items-center gap-2.5 cursor-pointer" data-testid="sidebar-logo">
-              <img
-                src={logoImg}
-                alt="Freefinity India"
-                className="h-10 w-10 rounded-xl object-contain drop-shadow-[0_0_8px_rgba(255,122,24,0.4)]"
-              />
-              <span className="text-xl font-bold tracking-tight">
-                <span className="saffron-text">Free</span>finity India
-              </span>
+            <div className="flex items-center gap-3 cursor-pointer" data-testid="sidebar-logo">
+              <div
+                className="h-10 w-10 rounded-xl flex items-center justify-center text-2xl font-black shrink-0 relative"
+                style={{
+                  background: 'linear-gradient(135deg, #0B1026 0%, #121A3A 100%)',
+                  border: '1px solid rgba(245,176,65,0.35)',
+                  color: '#F5B041',
+                  boxShadow: '0 0 14px rgba(245,176,65,0.18)',
+                }}
+              >
+                Z
+              </div>
+              <div className="min-w-0">
+                <span className="text-xl font-bold tracking-tight block gold-text">Zorish</span>
+                <span className="text-[10px] text-muted-foreground leading-none">Apna Social Space</span>
+              </div>
             </div>
           </Link>
         </div>
@@ -101,7 +107,7 @@ export function Sidebar() {
                   className={cn(
                     "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all",
                     active
-                      ? "bg-primary/10 text-primary"
+                      ? "nav-active bg-card text-primary"
                       : isHighlight
                         ? "text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 border border-blue-500/20"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -131,7 +137,7 @@ export function Sidebar() {
               className={cn(
                 "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all",
                 moreOpen
-                  ? "bg-primary/10 text-primary"
+                  ? "nav-active bg-card text-primary"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
               data-testid="nav-more"
@@ -152,7 +158,7 @@ export function Sidebar() {
                         className={cn(
                           "flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-all",
                           active
-                            ? "bg-primary/10 text-primary font-medium"
+                            ? "bg-card text-primary font-medium"
                             : "text-muted-foreground hover:bg-muted hover:text-foreground"
                         )}
                         data-testid={`nav-more-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
@@ -164,7 +170,7 @@ export function Sidebar() {
                   );
                 })}
                 <button
-                  onClick={() => { setMoreOpen(false); if (window.confirm("Are you sure you want to logout of Freefinity India?")) logout(); }}
+                  onClick={() => { setMoreOpen(false); if (window.confirm("Are you sure you want to logout of Zorish?")) logout(); }}
                   className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-destructive transition-all hover:bg-destructive/10"
                   data-testid="nav-more-logout"
                 >
@@ -184,7 +190,7 @@ export function Sidebar() {
             data-testid="button-share-app"
           >
             <Share2 className="h-4 w-4" />
-            Share
+            Share Zorish
           </Button>
 
           {user && (

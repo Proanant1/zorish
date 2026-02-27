@@ -60,7 +60,7 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
   const handleShare = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Freefinity India", text: "Check out Freefinity India!", url: window.location.origin });
+        await navigator.share({ title: "Zorish", text: "Check out Zorish — Apna Social Space!", url: window.location.origin });
       } catch {}
     } else {
       await navigator.clipboard.writeText(window.location.origin);
@@ -70,7 +70,7 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
 
   const handleLogout = () => {
     onClose();
-    if (window.confirm("Are you sure you want to logout of Freefinity India?")) logout();
+    if (window.confirm("Are you sure you want to logout of Zorish?")) logout();
   };
 
   return (
@@ -121,7 +121,7 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
                   className={cn(
                     "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all",
                     active
-                      ? "bg-primary/10 text-primary"
+                      ? "bg-card text-primary"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   )}
                   data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
@@ -143,7 +143,7 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
                   className={cn(
                     "flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-all",
                     active
-                      ? "bg-primary/10 text-primary"
+                      ? "bg-card text-primary"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   )}
                   data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
@@ -161,7 +161,7 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
             data-testid="mobile-nav-share"
           >
             <Share2 className="h-4 w-4" />
-            <span>Share App</span>
+            <span>Share Zorish</span>
           </button>
 
           <button
