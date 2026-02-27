@@ -66,8 +66,8 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
-                <div className="h-8 w-8 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <Zap className="h-4 w-4 text-blue-500" />
+                <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center shrink-0 mt-0.5">
+                  <Zap className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm font-medium">Trending Hashtags</p>

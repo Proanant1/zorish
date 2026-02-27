@@ -226,8 +226,8 @@ export default function SettingsPage() {
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                 <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-blue-500/10 flex items-center justify-center">
-                    <span className="text-xs font-bold text-blue-500">G</span>
+                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                    <span className="text-xs font-bold text-primary">G</span>
                   </div>
                   <span className="text-sm font-medium">Google</span>
                 </div>

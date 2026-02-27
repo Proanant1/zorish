@@ -61,8 +61,8 @@ export default function NotificationPrefsPage() {
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-blue-500/10 flex items-center justify-center">
-                  <Mail className="h-4 w-4 text-blue-500" />
+                <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                  <Mail className="h-4 w-4 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm font-medium">Email Notifications</p>

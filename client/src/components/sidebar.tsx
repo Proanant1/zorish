@@ -104,13 +104,13 @@ export function Sidebar() {
                     active
                       ? "nav-active bg-card text-primary"
                       : isHighlight
-                        ? "text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 border border-blue-500/20"
+                        ? "text-primary hover:bg-muted hover:text-primary border border-primary/20"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   )}
                   data-testid={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <span className="relative">
-                    <item.icon className={cn("h-5 w-5", active && "stroke-[2.5px]", isHighlight && !active && "fill-blue-400/20")} />
+                    <item.icon className={cn("h-5 w-5", active && "stroke-[2.5px]")} />
                     {item.path === "/notifications" && unreadCount > 0 && (
                       <span className="absolute -top-1.5 -right-1.5 h-4 min-w-4 flex items-center justify-center rounded-full bg-green-500 text-white text-[10px] font-bold px-0.5">
                         {unreadCount > 9 ? "9+" : unreadCount}
@@ -119,7 +119,7 @@ export function Sidebar() {
                   </span>
                   <span>{item.label}</span>
                   {isHighlight && !active && (
-                    <span className="ml-auto text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded-full font-semibold">NEW</span>
+                    <span className="ml-auto text-[10px] bg-primary/15 text-primary px-1.5 py-0.5 rounded-full font-semibold">NEW</span>
                   )}
                 </button>
               </Link>

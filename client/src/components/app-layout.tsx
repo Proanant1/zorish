@@ -58,12 +58,6 @@ export function AppLayout({ children, title }: { children: React.ReactNode; titl
 
   return (
     <div className="min-h-screen bg-background relative">
-      {theme === "dark" && (
-        <>
-          <div className="cosmic-bg" aria-hidden="true" />
-          <div className="vignette-overlay" aria-hidden="true" />
-        </>
-      )}
 
       <Sidebar />
 

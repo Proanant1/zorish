@@ -102,14 +102,14 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
               className={cn(
                 "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-all mb-2",
                 isActive("/get-verified")
-                  ? "bg-blue-500/20 text-blue-300"
-                  : "text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 border border-blue-500/20"
+                  ? "bg-primary/15 text-primary"
+                  : "text-primary hover:bg-muted border border-primary/20"
               )}
               data-testid="mobile-nav-get-verified"
             >
-              <BadgeCheck className="h-5 w-5 fill-blue-400/20" />
+              <BadgeCheck className="h-5 w-5" />
               <span>Get Verified</span>
-              <span className="ml-auto text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded-full">NEW</span>
+              <span className="ml-auto text-[10px] bg-primary/15 text-primary px-1.5 py-0.5 rounded-full">NEW</span>
             </button>
           </Link>
 

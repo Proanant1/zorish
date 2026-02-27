@@ -119,7 +119,7 @@ function GoldButton({ children, onClick, type = "button", disabled, testId }: {
       style={{
         width: "100%",
         background: disabled ? "rgba(245,176,65,0.5)" : "#F5B041",
-        color: "#0B1026",
+        color: "#0A0A0A",
         border: "none",
         borderRadius: "20px",
         padding: "14px",
@@ -352,7 +352,7 @@ export default function AuthPage() {
   );
 
   const cardStyle: React.CSSProperties = {
-    background: "#121A3A",
+    background: "#161616",
     borderRadius: "16px",
     border: "1px solid rgba(255,255,255,0.08)",
     padding: "32px",
@@ -381,7 +381,7 @@ export default function AuthPage() {
                 flex: 1, borderRadius: "10px", padding: "8px",
                 fontSize: "14px", fontWeight: 500, fontFamily: "inherit",
                 background: mode === "login" ? "#F5B041" : "transparent",
-                color: mode === "login" ? "#0B1026" : "#9BA3AF",
+                color: mode === "login" ? "#0A0A0A" : "#9BA3AF",
                 border: "none", cursor: "pointer", transition: "all 0.2s ease",
               }}
             >
@@ -395,7 +395,7 @@ export default function AuthPage() {
                 flex: 1, borderRadius: "10px", padding: "8px",
                 fontSize: "14px", fontWeight: 500, fontFamily: "inherit",
                 background: mode === "register" ? "#F5B041" : "transparent",
-                color: mode === "register" ? "#0B1026" : "#9BA3AF",
+                color: mode === "register" ? "#0A0A0A" : "#9BA3AF",
                 border: "none", cursor: "pointer", transition: "all 0.2s ease",
               }}
             >
@@ -419,7 +419,7 @@ export default function AuthPage() {
   );
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0B1026", display: "flex", fontFamily: "'Inter', 'Poppins', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "#0A0A0A", display: "flex", fontFamily: "'Inter', 'Poppins', sans-serif" }}>
 
       {/* LEFT PANEL — desktop only */}
       <div

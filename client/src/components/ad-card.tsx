@@ -84,7 +84,7 @@ export function AdCard({ ad }: { ad: AdItem }) {
               alignItems: "center",
               gap: "6px",
               background: "#F5B041",
-              color: "#0B1026",
+              color: "#0A0A0A",
               borderRadius: "20px",
               padding: "8px 20px",
               fontSize: "13px",

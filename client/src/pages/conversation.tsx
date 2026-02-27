@@ -324,12 +324,6 @@ export default function ConversationPage() {
 
   return (
     <div className="flex flex-col h-screen bg-background relative">
-      {theme === "dark" && (
-        <>
-          <div className="cosmic-bg" aria-hidden="true" />
-          <div className="vignette-overlay" aria-hidden="true" />
-        </>
-      )}
 
       <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur-md" data-testid="chat-header">
         <div className="flex items-center gap-3 px-3 h-14">
