@@ -87,13 +87,20 @@ export function CreatePost() {
     }
   };
 
-  const uploadFile = async (file: File, prefix: string): Promise<string> => {
-    const ext = file.name.split('.').pop() || 'bin';
-    const filename = `${prefix}_${Date.now()}.${ext}`;
-    const res = await apiRequest("POST", "/api/uploads/request-url", { filename, contentType: file.type });
-    const { signedUrl, objectName } = await res.json();
-    await fetch(signedUrl, { method: "PUT", body: file, headers: { "Content-Type": file.type } });
-    return `/objects/${objectName}`;
+  const uploadFile = async (file: File): Promise<string> => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await fetch("/api/uploads/media", {
+      method: "POST",
+      body: formData,
+      credentials: "include",
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Upload failed: ${text}`);
+    }
+    const { url } = await res.json();
+    return url;
   };
 
   const createMutation = useMutation({
@@ -104,13 +111,13 @@ export function CreatePost() {
       let postType = mode;
 
       if (mode === "image" && selectedImage) {
-        imageUrl = await uploadFile(selectedImage, "post_img");
+        imageUrl = await uploadFile(selectedImage);
       }
       if (mode === "video" && selectedImage) {
-        videoUrl = await uploadFile(selectedImage, "post_vid");
+        videoUrl = await uploadFile(selectedImage);
       }
       if (mode === "audio" && selectedAudio) {
-        audioUrl = await uploadFile(selectedAudio, "post_audio");
+        audioUrl = await uploadFile(selectedAudio);
       }
 
       const body: any = {

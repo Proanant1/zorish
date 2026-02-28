@@ -12,6 +12,10 @@ import connectPgSimple from "connect-pg-simple";
 import { registerObjectStorageRoutes } from "./replit_integrations/object_storage";
 import type { BadgeType } from "@shared/schema";
 import { sendPasswordResetEmail } from "./email";
+import multer from "multer";
+import path from "path";
+import fs from "fs";
+import express from "express";
 
 const scryptAsync = promisify(scrypt);
 
@@ -55,6 +59,32 @@ export async function registerRoutes(
   }));
 
   registerObjectStorageRoutes(app);
+
+  const uploadsDir = path.join(process.cwd(), "uploads");
+  if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+  app.use("/uploads", express.static(uploadsDir));
+
+  const mediaStorage = multer.diskStorage({
+    destination: (_req, _file, cb) => cb(null, uploadsDir),
+    filename: (_req, file, cb) => {
+      const ext = path.extname(file.originalname) || ".bin";
+      cb(null, `media_${Date.now()}_${Math.random().toString(36).slice(2)}${ext}`);
+    },
+  });
+  const upload = multer({
+    storage: mediaStorage,
+    limits: { fileSize: 100 * 1024 * 1024 },
+    fileFilter: (_req, file, cb) => {
+      const allowed = /^(image|video|audio)\//;
+      cb(null, allowed.test(file.mimetype));
+    },
+  });
+
+  app.post("/api/uploads/media", requireAuth, upload.single("file"), (req, res) => {
+    if (!req.file) return res.status(400).json({ error: "No file uploaded" });
+    const url = `/uploads/${req.file.filename}`;
+    res.json({ url });
+  });
 
   app.post("/api/auth/register", async (req, res) => {
     try {
