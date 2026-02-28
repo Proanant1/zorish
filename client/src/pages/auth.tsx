@@ -405,8 +405,8 @@ export default function AuthPage() {
 
               <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div>
-                  <label style={label} htmlFor="login-username">Username</label>
-                  <AuthInput id="login-username" placeholder="Enter username" value={loginUsername} onChange={setLoginUsername} data-testid="input-login-username" />
+                  <label style={label} htmlFor="login-username">Username or Email</label>
+                  <AuthInput id="login-username" placeholder="Enter username or email" value={loginUsername} onChange={setLoginUsername} data-testid="input-login-username" />
                   <FieldError msg={errors.username} />
                 </div>
                 <div>

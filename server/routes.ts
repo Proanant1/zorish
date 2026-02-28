@@ -176,7 +176,15 @@ export async function registerRoutes(
       const { username, password } = req.body;
       if (!username || !password) return res.status(400).json({ message: "Username and password required" });
 
-      const user = await storage.getUserByUsername(username);
+      const trimmed = username.trim();
+      let user = await storage.getUserByUsername(trimmed);
+
+      if (!user) {
+        const [byEmail] = await db.select().from(users)
+          .where(sql`LOWER(${users.email}) = LOWER(${trimmed})`).limit(1);
+        user = byEmail;
+      }
+
       if (!user) return res.status(401).json({ message: "Invalid username or password" });
 
       const valid = await comparePassword(password, user.password);
@@ -501,8 +509,9 @@ export async function registerRoutes(
 
   app.get("/api/search/users", async (req, res) => {
     try {
-      const q = (req.query.q as string) || "";
-      if (q.length < 2) return res.json([]);
+      const raw = (req.query.q as string) || "";
+      const q = raw.replace(/^@+/, "").trim();
+      if (q.length < 1) return res.json([]);
       const users = await storage.searchUsers(q);
       const safe = users.map(({ password, ...u }) => u);
       res.json(safe);
