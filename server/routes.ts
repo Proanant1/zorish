@@ -407,13 +407,13 @@ export async function registerRoutes(
       }
       if (body.bio !== undefined) updateData.bio = body.bio;
       if (body.avatarUrl !== undefined) {
-        if (body.avatarUrl && !body.avatarUrl.startsWith("/objects/") && !body.avatarUrl.startsWith("http")) {
+        if (body.avatarUrl && !body.avatarUrl.startsWith("/objects/") && !body.avatarUrl.startsWith("/uploads/") && !body.avatarUrl.startsWith("http")) {
           return res.status(400).json({ message: "Invalid avatar URL" });
         }
         updateData.avatarUrl = body.avatarUrl;
       }
       if (body.headerUrl !== undefined) {
-        if (body.headerUrl && !body.headerUrl.startsWith("/objects/") && !body.headerUrl.startsWith("http")) {
+        if (body.headerUrl && !body.headerUrl.startsWith("/objects/") && !body.headerUrl.startsWith("/uploads/") && !body.headerUrl.startsWith("http")) {
           return res.status(400).json({ message: "Invalid header URL" });
         }
         updateData.headerUrl = body.headerUrl;
