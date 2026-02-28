@@ -1,4 +1,5 @@
 import { useLocation, Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import {
   Home, Search, Bell, MessageCircle, Bookmark, Clapperboard,
   User, Settings, Shield, Languages, BellRing, Ban,
@@ -51,6 +52,19 @@ interface MobileMenuSheetProps {
 export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
   const [location] = useLocation();
   const { user, logout } = useAuth();
+
+  const { data: notifData } = useQuery<{ count: number }>({
+    queryKey: ["/api/notifications/count"],
+    refetchInterval: 30000,
+    enabled: !!user,
+  });
+  const { data: msgData } = useQuery<{ count: number }>({
+    queryKey: ["/api/messages/unread/count"],
+    refetchInterval: 30000,
+    enabled: !!user,
+  });
+  const unreadNotifs = notifData?.count ?? 0;
+  const unreadMsgs = msgData?.count ?? 0;
 
   const isActive = (path: string) =>
     path === "/" ? location === "/" : location.startsWith(path);
@@ -115,6 +129,11 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
 
           {navItems.map((item) => {
             const active = isActive(item.path);
+            const badge = item.path === "/notifications" && unreadNotifs > 0
+              ? unreadNotifs
+              : item.path === "/chat" && unreadMsgs > 0
+              ? unreadMsgs
+              : 0;
             return (
               <Link key={item.path} href={item.path} onClick={handleNav}>
                 <button
@@ -126,7 +145,14 @@ export function MobileMenuSheet({ open, onClose }: MobileMenuSheetProps) {
                   )}
                   data-testid={`mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                 >
-                  <item.icon className={cn("h-5 w-5", active && "stroke-[2.5px]")} />
+                  <span className="relative">
+                    <item.icon className={cn("h-5 w-5", active && "stroke-[2.5px]")} />
+                    {badge > 0 && (
+                      <span className="absolute -top-1.5 -right-1.5 h-4 min-w-4 flex items-center justify-center rounded-full bg-primary text-[#0A0A0A] text-[10px] font-bold px-0.5">
+                        {badge > 9 ? "9+" : badge}
+                      </span>
+                    )}
+                  </span>
                   <span>{item.label}</span>
                 </button>
               </Link>

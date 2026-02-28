@@ -7,7 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { UserBadge } from "@/components/user-badge";
 import { Input } from "@/components/ui/input";
 import {
-  Send, ArrowLeft, Image, Video, Mic, FileText, MapPin, Loader2, Paperclip, X
+  Send, ArrowLeft, Image, Video, Mic, FileText, MapPin, Loader2, Paperclip, X, Check, CheckCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { apiRequest, queryClient } from "@/lib/queryClient";
@@ -61,7 +61,7 @@ function shouldShowDateSeparator(current: Message, prev: Message | null) {
 
 type UserInfo = Pick<User, 'id' | 'username' | 'displayName' | 'avatarUrl' | 'verified' | 'badgeType'>;
 
-function MessageBubble({ msg, isMine, otherUser, showSeen }: { msg: Message; isMine: boolean; otherUser: UserInfo; showSeen?: boolean }) {
+function MessageBubble({ msg, isMine, otherUser }: { msg: Message; isMine: boolean; otherUser: UserInfo; showSeen?: boolean }) {
   const renderContent = () => {
     switch (msg.messageType) {
       case "image":
@@ -155,31 +155,23 @@ function MessageBubble({ msg, isMine, otherUser, showSeen }: { msg: Message; isM
             : "bg-muted rounded-bl-sm"
         )}>
           {renderContent()}
-          <p className={cn(
-            "text-[10px] mt-0.5 text-right",
-            isMine ? "text-primary-foreground/70" : "text-muted-foreground"
+          <div className={cn(
+            "flex items-center justify-end gap-1 mt-0.5",
           )}>
-            {formatMessageTime(msg.createdAt)}
-          </p>
+            <span className={cn(
+              "text-[10px]",
+              isMine ? "text-primary-foreground/70" : "text-muted-foreground"
+            )}>
+              {formatMessageTime(msg.createdAt)}
+            </span>
+            {isMine && (
+              msg.read
+                ? <CheckCheck className="h-3.5 w-3.5 shrink-0" style={{ color: "#F5B041" }} data-testid={`tick-read-${msg.id}`} />
+                : <Check className="h-3.5 w-3.5 shrink-0 text-primary-foreground/60" data-testid={`tick-sent-${msg.id}`} />
+            )}
+          </div>
         </div>
       </div>
-      {isMine && showSeen && msg.read && (
-        <div className="flex items-center gap-1 px-4 mt-0.5" data-testid={`msg-seen-${msg.id}`}>
-          {otherUser.avatarUrl ? (
-            <Avatar className="h-3.5 w-3.5">
-              <AvatarImage src={otherUser.avatarUrl} />
-              <AvatarFallback className={cn("text-white text-[8px]", getAvatarColor(otherUser.displayName))}>
-                {getInitials(otherUser.displayName)}
-              </AvatarFallback>
-            </Avatar>
-          ) : (
-            <div className={cn("h-3.5 w-3.5 rounded-full flex items-center justify-center text-white text-[8px]", getAvatarColor(otherUser.displayName))}>
-              {getInitials(otherUser.displayName)[0]}
-            </div>
-          )}
-          <span className="text-[10px] text-muted-foreground">Seen</span>
-        </div>
-      )}
     </div>
   );
 }
@@ -377,27 +369,22 @@ export default function ConversationPage() {
             <p className="text-xs text-muted-foreground mt-1">Send a message to start the conversation</p>
           </div>
         ) : (
-          (() => {
-            const lastReadSentIdx = messages.reduce((acc, m, i) =>
-              m.senderId === user?.id && m.read ? i : acc, -1);
-            return messages.map((msg, idx) => {
-              const prev = idx > 0 ? messages[idx - 1] : null;
-              const isMine = msg.senderId === user?.id;
-              const showSeen = idx === lastReadSentIdx;
-              return (
-                <div key={msg.id}>
-                  {shouldShowDateSeparator(msg, prev) && (
-                    <div className="flex items-center justify-center my-3">
-                      <span className="text-[11px] text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                        {formatDateSeparator(msg.createdAt)}
-                      </span>
-                    </div>
-                  )}
-                  <MessageBubble msg={msg} isMine={isMine} otherUser={otherUser} showSeen={showSeen} />
-                </div>
-              );
-            });
-          })()
+          messages.map((msg, idx) => {
+            const prev = idx > 0 ? messages[idx - 1] : null;
+            const isMine = msg.senderId === user?.id;
+            return (
+              <div key={msg.id}>
+                {shouldShowDateSeparator(msg, prev) && (
+                  <div className="flex items-center justify-center my-3">
+                    <span className="text-[11px] text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                      {formatDateSeparator(msg.createdAt)}
+                    </span>
+                  </div>
+                )}
+                <MessageBubble msg={msg} isMine={isMine} otherUser={otherUser} />
+              </div>
+            );
+          })
         )}
       </div>
 

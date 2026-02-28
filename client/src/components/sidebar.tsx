@@ -60,6 +60,13 @@ export function Sidebar() {
   });
   const unreadCount = notifCountData?.count ?? 0;
 
+  const { data: msgCountData } = useQuery<{ count: number }>({
+    queryKey: ["/api/messages/unread/count"],
+    refetchInterval: 30000,
+    enabled: !!user,
+  });
+  const unreadMsgCount = msgCountData?.count ?? 0;
+
   const isActive = (path: string) =>
     path === "/" ? location === "/" : location.startsWith(path);
 
@@ -114,6 +121,11 @@ export function Sidebar() {
                     {item.path === "/notifications" && unreadCount > 0 && (
                       <span className="absolute -top-1.5 -right-1.5 h-4 min-w-4 flex items-center justify-center rounded-full bg-green-500 text-white text-[10px] font-bold px-0.5">
                         {unreadCount > 9 ? "9+" : unreadCount}
+                      </span>
+                    )}
+                    {item.path === "/chat" && unreadMsgCount > 0 && (
+                      <span className="absolute -top-1.5 -right-1.5 h-4 min-w-4 flex items-center justify-center rounded-full bg-primary text-[#0A0A0A] text-[10px] font-bold px-0.5">
+                        {unreadMsgCount > 9 ? "9+" : unreadMsgCount}
                       </span>
                     )}
                   </span>
