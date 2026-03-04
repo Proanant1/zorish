@@ -14,6 +14,18 @@
   "dir": "ltr",
   "categories": ["social", "news", "entertainment"],
   "iarc_rating_id": "",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
   "icons": [
     {
       "src": "/icons/icon-48.png",
