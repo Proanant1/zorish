@@ -13,6 +13,7 @@
   "lang": "en-IN",
   "dir": "ltr",
   "categories": ["social", "news", "entertainment"],
+  "iarc_rating_id": "",
   "icons": [
     {
       "src": "/icons/icon-48.png",
@@ -114,14 +115,14 @@
   "screenshots": [
     {
       "src": "/screenshots/screenshot-mobile.png",
-      "sizes": "390x844",
+      "sizes": "768x1408",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Zorish — Home Feed on Mobile"
     },
     {
       "src": "/screenshots/screenshot-desktop.png",
-      "sizes": "1280x800",
+      "sizes": "1408x768",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Zorish — Desktop Experience"
