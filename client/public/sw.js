@@ -1,4 +1,4 @@
-const CACHE_VERSION = "freefinity-v2";
+const CACHE_VERSION = "zorish-v1";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 
@@ -76,7 +76,7 @@ self.addEventListener("fetch", (event) => {
 // ── Push notifications (future-ready) ─────────────────────────────────────
 self.addEventListener("push", (event) => {
   const data = event.data?.json?.() ?? {};
-  const title = data.title || "Freefinity India";
+  const title = data.title || "Zorish — Apna Social Space";
   const options = {
     body: data.body || "You have a new notification",
     icon: "/icons/icon-192.png",

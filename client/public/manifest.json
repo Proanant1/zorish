@@ -1,15 +1,15 @@
 {
   "id": "/",
-  "name": "Freefinity India",
-  "short_name": "Freefinity",
-  "description": "Your Voice. Your Bharat. No Limits. - Freedom Without Limits for India. Share, connect, and discover what's trending across Bharat.",
+  "name": "Zorish — Apna Social Space",
+  "short_name": "Zorish",
+  "description": "Zorish — Apna Social Space. India's premium social platform for real connections. Share posts, watch reels, chat, and discover what's trending across Bharat.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation": "portrait",
   "background_color": "#0a0a0a",
-  "theme_color": "#c87727",
+  "theme_color": "#F5B041",
   "lang": "en-IN",
   "dir": "ltr",
   "categories": ["social", "news", "entertainment"],
@@ -117,14 +117,14 @@
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Freefinity India - Home Feed"
+      "label": "Zorish — Home Feed on Mobile"
     },
     {
       "src": "/screenshots/screenshot-desktop.png",
       "sizes": "1280x800",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Freefinity India - Desktop"
+      "label": "Zorish — Desktop Experience"
     }
   ],
   "related_applications": [],
