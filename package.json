@@ -4,11 +4,11 @@
   "type": "commonjs",
   "license": "MIT",
   "scripts": {
-    "dev": "tsx server/index.ts",
-    "build": "tsc",
-    "start": "node dist/server/index.js",
-    "check": "tsc"
-  },
+  "dev": "tsx server/index.ts",
+  "build": "tsc",
+  "start": "node dist/server/index.js",
+  "check": "tsc"
+},
   "dependencies": {
     "express": "^5.0.1",
     "pg": "^8.16.3",
