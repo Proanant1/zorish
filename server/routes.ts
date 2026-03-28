@@ -10,7 +10,7 @@ import { promisify } from "util";
 import { pool } from "./db";
 import connectPgSimple from "connect-pg-simple";
 import { registerObjectStorageRoutes } from "./replit_integrations/object_storage";
-import type { BadgeType } from "@shared/schema";
+import type { BadgeType } from "../shared/schema";
 import { sendPasswordResetEmail } from "./email";
 import multer from "multer";
 import path from "path";
