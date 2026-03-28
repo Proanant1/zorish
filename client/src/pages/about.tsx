@@ -2,7 +2,7 @@ import { AppLayout } from "@/components/app-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, MapPin, Globe, Star, Shield, Users, Zap } from "lucide-react";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 export default function AboutPage() {
   return (

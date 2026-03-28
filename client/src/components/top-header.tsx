@@ -1,7 +1,7 @@
 import { useTheme } from "@/lib/theme";
 import { Moon, Sun, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 export function TopHeader({ title }: { title?: string }) {
   const { theme, toggleTheme } = useTheme();

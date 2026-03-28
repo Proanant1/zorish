@@ -21,7 +21,8 @@ import {
 } from "lucide-react";
 import { UserBadge } from "@/components/user-badge";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 import { apiRequest, queryClient } from "@/lib/queryClient";
@@ -311,7 +312,7 @@ export default function ProfilePage() {
                     title="LinkedIn"
                     data-testid="link-linkedin"
                   >
-                    <SiLinkedin className="h-4 w-4" />
+                    <FaLinkedin className="h-4 w-4" />
                   </a>
                 )}
                 {profile.whatsapp && (
@@ -530,7 +531,7 @@ export default function ProfilePage() {
               </div>
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <SiLinkedin className="h-4 w-4 text-blue-600" /> LinkedIn
+                  <FaLinkedin className="h-4 w-4 text-blue-600" /> LinkedIn
                 </Label>
                 <Input
                   placeholder="https://linkedin.com/in/yourprofile"

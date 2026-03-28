@@ -28,7 +28,7 @@ import DonatePage from "@/pages/donate";
 import GetVerifiedPage from "@/pages/get-verified";
 import NotificationsPage from "@/pages/notifications";
 import ReelsPage from "@/pages/reels";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "./assets/zorish-z.svg";
 
 function AuthenticatedRouter() {
   const { user, isLoading } = useAuth();

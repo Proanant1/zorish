@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 const avatarColors = [
   "bg-orange-500", "bg-emerald-500", "bg-violet-500", "bg-sky-500",

@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Eye, EyeOff, CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { useLocation } from "wouter";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 export default function ResetPasswordPage() {
   const [, setLocation] = useLocation();

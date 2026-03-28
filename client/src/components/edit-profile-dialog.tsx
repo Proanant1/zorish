@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Camera, ImagePlus, Loader2 } from "lucide-react";
-import { SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -279,7 +280,7 @@ export function EditProfileDialog({ open, onOpenChange }: { open: boolean; onOpe
               </div>
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <SiLinkedin className="h-4 w-4 text-blue-600" /> LinkedIn
+                  <SiLinkedinIn className="h-4 w-4 text-blue-600" /> LinkedIn
                 </Label>
                 <Input
                   placeholder="https://linkedin.com/in/yourprofile"

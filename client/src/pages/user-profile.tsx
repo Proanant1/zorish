@@ -10,7 +10,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { MapPin, Globe, UserPlus, UserMinus, Users, Loader2, Clock, MessageCircle } from "lucide-react";
 import { UserBadge } from "@/components/user-badge";
-import { SiGmail, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { Link } from "wouter";
@@ -183,7 +184,7 @@ export default function UserProfilePage() {
                     title="LinkedIn"
                     data-testid="link-linkedin"
                   >
-                    <SiLinkedin className="h-4 w-4" />
+                    <FaLinkedin className="h-4 w-4" />
                   </a>
                 )}
                 {profile.whatsapp && (

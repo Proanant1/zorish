@@ -4,7 +4,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 const indianStates = [
   "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",

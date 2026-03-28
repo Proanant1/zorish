@@ -9,7 +9,7 @@ import { Moon, Sun, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
-import zorishLogoUrl from "@assets/zorish-z.svg";
+import zorishLogoUrl from "../assets/zorish-z.svg";
 
 const avatarColors = [
   "bg-orange-500", "bg-emerald-500", "bg-violet-500", "bg-sky-500",

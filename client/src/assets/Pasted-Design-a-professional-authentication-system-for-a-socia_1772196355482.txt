@@ -1,0 +1,168 @@
+Design a professional authentication system for a social media platform named:
+
+Zorish
+Tagline: Apna Social Space
+
+Theme: Cosmic Premium Dark
+Style: Minimal, modern, clean
+Avoid flashy, crypto, or gaming aesthetics.
+
+-------------------------------------
+GLOBAL DESIGN SYSTEM
+-------------------------------------
+
+Primary Background:
+#0B1026 (Deep Midnight Navy)
+
+Card / Input Background:
+#121A3A
+
+Primary Accent:
+#F5B041 (Soft Gold)
+
+Primary Text:
+#F5F7FA
+
+Secondary Text:
+#9BA3AF
+
+Border:
+rgba(255,255,255,0.08)
+
+Font:
+Modern sans-serif (Inter or Poppins style)
+Max 3 font weights.
+
+Border Radius:
+16px for cards
+14px for inputs
+20px for buttons
+
+No heavy shadows.
+No neon glow.
+No particles.
+No 3D effects.
+
+-------------------------------------
+WEB VERSION (Split Layout)
+-------------------------------------
+
+Create a responsive split-screen login page.
+
+LEFT SECTION (40% width):
+- Dark navy background (#0B1026)
+- Small flat gold “Z” logo at top
+- Heading: "Welcome to Zorish"
+- Subtext: "Apna Social Space"
+- 3 bullet highlights:
+  • Connect
+  • Share
+  • Discover
+- Subtle radial gradient behind logo (very soft)
+
+RIGHT SECTION (60% width):
+Centered authentication card:
+Background: #121A3A
+Rounded corners: 16px
+Soft border only (no heavy shadow)
+
+Inside card:
+
+Title:
+Sign In
+
+Input Fields:
+1. Phone or Email
+2. Password
+
+Input Style:
+- Background: #121A3A
+- Thin border
+- On focus: border turns gold (#F5B041)
+
+Primary Button:
+Gold background (#F5B041)
+Text: Dark navy
+Rounded (20px)
+Full width
+
+Secondary Options:
+Divider line
+Continue with Google
+Continue with Apple
+
+Bottom:
+"Don’t have an account? Sign Up"
+
+-------------------------------------
+MOBILE VERSION (Centered Layout)
+-------------------------------------
+
+Create a vertically centered login screen.
+
+Top:
+Small flat gold "Z"
+Text: Zorish
+Subtext: Apna Social Space
+
+Middle:
+Phone number input (India first)
+Country code selector default +91
+Gold "Get OTP" button
+
+OR divider
+
+Continue with Google
+
+Bottom:
+Terms & Privacy text in muted gray
+
+-------------------------------------
+OTP SCREEN (Mobile)
+-------------------------------------
+
+Title: Verify OTP
+
+6 digit input boxes
+Gold focus highlight
+Resend timer text
+Gold "Verify & Continue" button
+
+-------------------------------------
+SIGNUP FLOW
+-------------------------------------
+
+After OTP verification:
+
+Step 1:
+Full Name
+
+Step 2:
+Username
+
+Step 3:
+Create Password
+
+Gold primary button:
+Create Account
+
+-------------------------------------
+UX REQUIREMENTS
+-------------------------------------
+
+- Large tap targets
+- Proper spacing (20px between sections)
+- Fast loading
+- Clean alignment
+- Minimal animation (button hover only)
+- Dark mode default
+- Fully responsive
+
+-------------------------------------
+IMPORTANT
+-------------------------------------
+
+The design must feel like a real billion-dollar startup product.
+Not AI-template style.
+Not over-designed.
+Clean, calm, confident.

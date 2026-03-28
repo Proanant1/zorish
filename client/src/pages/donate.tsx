@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Heart, Copy, Check, QrCode } from "lucide-react";
 import { SiBitcoin } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
-import btcQrImg from "@assets/image_1771764745210.png";
-import trxQrImg from "@assets/image_1771764775315.png";
+import btcQrImg from "../assets/image_1771764745210.png";
+import trxQrImg from "../assets/image_1771764775315.png";
 
 type PaymentMethod = "btc" | "trx" | "upi" | null;
 
