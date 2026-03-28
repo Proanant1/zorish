@@ -1,0 +1,26 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0KDatabase schema created successfully
+1:22:58 PM [express] serving on port 5000
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+1:23:05 PM [express] GET /api/auth/me 304 in 14ms :: {"id":"1a7c605d-2aeb-4d01-9430-289bb714e68d","username":"rahulp23","email":"rahulapal23@gmail.com","displayName":"Rahul Pal","bio":"","avatarUrl":"","headerUrl":"","state":"Manipur","languagePreferenc...
+1:23:05 PM [express] GET /api/notifications/count 304 in 14ms :: {"count":0}
+1:23:05 PM [express] GET /api/messages/unread/count 304 in 12ms :: {"count":0}
+1:23:05 PM [express] GET /api/stories/feed 304 in 22ms :: []
+1:23:05 PM [express] GET /api/posts 304 in 42ms :: [{"id":"18360ff4-e068-472d-8207-576fe3aa95a4","userId":"b8139ec7-217c-40bd-bd98-5694c597bd6d","content":"Test text-only post","postType":"text","imageUrl":"","videoUrl":"","audioUrl":"","pollQuestion"...
+1:23:41 PM [express] GET /api/posts/following 200 in 6ms :: []
+1:24:06 PM [express] GET /api/notifications/count 304 in 44ms :: {"count":0}
+1:24:06 PM [express] GET /api/messages/unread/count 304 in 47ms :: {"count":0}
+1:29:47 PM [express] GET /api/notifications/count 304 in 49ms :: {"count":0}
+1:29:47 PM [express] GET /api/messages/unread/count 304 in 6ms :: {"count":0}
+1:29:50 PM [express] GET /api/messages/conversations 200 in 6ms :: []
+1:30:04 PM [express] GET /api/posts/following 304 in 6ms :: []
+1:31:25 PM [express] GET /api/messages/unread/count 304 in 43ms :: {"count":0}
+1:31:25 PM [express] GET /api/notifications/count 304 in 40ms :: {"count":0}
+1:35:55 PM [express] GET /api/notifications/count 304 in 33ms :: {"count":0}
+1:35:55 PM [express] GET /api/messages/unread/count 304 in 42ms :: {"count":0}
+1:44:22 PM [express] GET /api/messages/unread/count 304 in 42ms :: {"count":0}
+1:44:22 PM [express] GET /api/notifications/count 304 in 36ms :: {"count":0}

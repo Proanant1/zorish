@@ -1,0 +1,41 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0KDatabase schema created successfully
+12:18:57 PM [express] serving on port 5000
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+12:19:04 PM [express] GET /api/auth/me 304 in 8ms :: {"id":"1a7c605d-2aeb-4d01-9430-289bb714e68d","username":"rahulp23","email":"rahulapal23@gmail.com","displayName":"Rahul Pal","bio":"","avatarUrl":"","headerUrl":"","state":"Manipur","languagePreferenc...
+12:19:04 PM [express] GET /api/notifications/count 200 in 8ms :: {"count":0}
+12:19:04 PM [express] GET /api/messages/unread/count 200 in 13ms :: {"count":0}
+12:19:04 PM [express] GET /api/stories/feed 304 in 15ms :: []
+12:19:04 PM [express] GET /api/posts 304 in 32ms :: [{"id":"18360ff4-e068-472d-8207-576fe3aa95a4","userId":"b8139ec7-217c-40bd-bd98-5694c597bd6d","content":"Test text-only post","postType":"text","imageUrl":"","videoUrl":"","audioUrl":"","pollQuestion"...
+12:19:25 PM [express] GET /api/auth/me 304 in 7ms :: {"id":"1a7c605d-2aeb-4d01-9430-289bb714e68d","username":"rahulp23","email":"rahulapal23@gmail.com","displayName":"Rahul Pal","bio":"","avatarUrl":"","headerUrl":"","state":"Manipur","languagePreferenc...
+12:19:26 PM [express] GET /api/messages/unread/count 304 in 7ms :: {"count":0}
+12:19:26 PM [express] GET /api/stories/feed 304 in 10ms :: []
+12:19:26 PM [express] GET /api/notifications/count 304 in 8ms :: {"count":0}
+12:19:26 PM [express] GET /api/posts 304 in 27ms :: [{"id":"18360ff4-e068-472d-8207-576fe3aa95a4","userId":"b8139ec7-217c-40bd-bd98-5694c597bd6d","content":"Test text-only post","postType":"text","imageUrl":"","videoUrl":"","audioUrl":"","pollQuestion"...
+12:19:44 PM [express] GET /api/posts/following 200 in 6ms :: []
+12:19:50 PM [express] GET /api/posts/videos 200 in 5ms :: []
+12:19:53 PM [express] GET /api/users/rahulp23 200 in 58ms :: {"id":"1a7c605d-2aeb-4d01-9430-289bb714e68d","username":"rahulp23","email":"rahulapal23@gmail.com","displayName":"Rahul Pal","bio":"","avatarUrl":"","headerUrl":"","state":"Manipur","languagePreferenc...
+12:20:23 PM [express] GET /api/notifications/count 304 in 5ms :: {"count":0}
+12:20:23 PM [express] GET /api/messages/unread/count 304 in 17ms :: {"count":0}
+12:20:53 PM [express] GET /api/messages/unread/count 304 in 16ms :: {"count":0}
+12:20:53 PM [express] GET /api/notifications/count 304 in 14ms :: {"count":0}
+12:21:23 PM [express] GET /api/notifications/count 304 in 34ms :: {"count":0}
+12:21:23 PM [express] GET /api/messages/unread/count 304 in 35ms :: {"count":0}
+12:21:53 PM [express] GET /api/messages/unread/count 304 in 15ms :: {"count":0}
+12:21:53 PM [express] GET /api/notifications/count 304 in 16ms :: {"count":0}
+12:22:24 PM [express] GET /api/messages/unread/count 304 in 17ms :: {"count":0}
+12:22:24 PM [express] GET /api/notifications/count 304 in 17ms :: {"count":0}
+12:23:20 PM [express] GET /api/notifications/count 304 in 16ms :: {"count":0}
+12:23:20 PM [express] GET /api/messages/unread/count 304 in 16ms :: {"count":0}
+12:23:50 PM [express] GET /api/notifications/count 304 in 48ms :: {"count":0}
+12:23:50 PM [express] GET /api/messages/unread/count 304 in 47ms :: {"count":0}
+12:24:20 PM [express] GET /api/notifications/count 304 in 13ms :: {"count":0}
+12:24:20 PM [express] GET /api/messages/unread/count 304 in 17ms :: {"count":0}
+12:24:51 PM [express] GET /api/messages/unread/count 304 in 16ms :: {"count":0}
+12:24:51 PM [express] GET /api/notifications/count 304 in 17ms :: {"count":0}
+12:25:21 PM [express] GET /api/messages/unread/count 304 in 14ms :: {"count":0}
+12:25:21 PM [express] GET /api/notifications/count 304 in 13ms :: {"count":0}
