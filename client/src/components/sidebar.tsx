@@ -155,7 +155,7 @@ export function Sidebar() {
             </button>
 
             {moreOpen && (
-              <div className="mt-1 ml-2 space-y-0.5 border-l-2 border-border pl-3" data-testid="more-dropdown">
+              <div className="mt-1 ml-2 space-y-0.5 border-l-2 border-gray-300 pl-3" data-testid="more-dropdown">
                 {moreMenuItems.map((item) => {
                   const active = isActive(item.path);
                   return (

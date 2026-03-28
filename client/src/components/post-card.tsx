@@ -351,7 +351,7 @@ export function PostCard({ post }: { post: PostWithUser }) {
           )}
 
           {translatedText && (
-            <div className="mt-2 rounded-lg bg-muted/50 p-2.5 text-sm leading-relaxed border border-border/50" data-testid={`text-translated-${post.id}`}>
+            <div className="mt-2 rounded-lg bg-muted/50 p-2.5 text-sm leading-relaxed border border-gray-300/50" data-testid={`text-translated-${post.id}`}>
               <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Translated</span>
               <p className="mt-0.5">{translatedText}</p>
             </div>

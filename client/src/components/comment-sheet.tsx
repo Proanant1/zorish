@@ -84,7 +84,7 @@ export function CommentSheet({ postId, open, onClose, onCommentAdded }: CommentS
         className="h-[78vh] flex flex-col p-0 rounded-t-2xl"
         data-testid="comment-sheet-content"
       >
-        <SheetHeader className="px-4 pt-4 pb-3 border-b border-border/50 shrink-0">
+        <SheetHeader className="px-4 pt-4 pb-3 border-b border-gray-300/50 shrink-0">
           <SheetTitle className="flex items-center gap-2 text-base">
             <MessageCircle className="h-4 w-4 text-primary" />
             Replies
@@ -143,7 +143,7 @@ export function CommentSheet({ postId, open, onClose, onCommentAdded }: CommentS
         </div>
 
         {user ? (
-          <div className="px-4 pb-4 pt-2 border-t border-border/50 shrink-0 space-y-2">
+          <div className="px-4 pb-4 pt-2 border-t border-gray-300/50 shrink-0 space-y-2">
             <Textarea
               placeholder="Write a reply... (Ctrl+Enter to send)"
               value={commentText}
@@ -169,7 +169,7 @@ export function CommentSheet({ postId, open, onClose, onCommentAdded }: CommentS
             </div>
           </div>
         ) : (
-          <div className="px-4 pb-4 pt-2 border-t border-border/50 shrink-0">
+          <div className="px-4 pb-4 pt-2 border-t border-gray-300/50 shrink-0">
             <p className="text-sm text-center text-muted-foreground">Sign in to reply</p>
           </div>
         )}
