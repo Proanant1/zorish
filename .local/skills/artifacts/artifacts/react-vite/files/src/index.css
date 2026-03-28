@@ -272,7 +272,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-gray-300;
   }
 
   body {
