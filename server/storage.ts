@@ -6,7 +6,7 @@ import {
   type User, type InsertUser, type Post, type InsertPost, type Comment, type InsertComment,
   type Hashtag, type PostWithUser, type UserProfile, type VerificationOrder, type BadgeType, type Notification,
   type Story, type Message, type FollowRequest,
-} from "@shared/schema";
+} from "../shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {

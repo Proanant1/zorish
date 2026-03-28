@@ -2,7 +2,7 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import session from "express-session";
 import { storage } from "./storage";
-import { insertPostSchema, insertCommentSchema, posts, stories, passwordResetTokens, users } from "@shared/schema";
+import { insertPostSchema, insertCommentSchema, posts, stories, passwordResetTokens, users } from "../shared/schema";
 import { eq, and, gt } from "drizzle-orm";
 import { db } from "./db";
 import { scrypt, randomBytes, timingSafeEqual, createHmac } from "crypto";

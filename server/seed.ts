@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { users, posts, hashtags, postHashtags, follows } from "@shared/schema";
+import { users, posts, hashtags, postHashtags, follows } from "../shared/schema";
 import { eq, sql } from "drizzle-orm";
 import { scrypt, randomBytes } from "crypto";
 import { promisify } from "util";
