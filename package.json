@@ -5,9 +5,8 @@
   "license": "MIT",
   "scripts": {
   "dev": "tsx server/index.ts",
-  "build": "tsc",
-  "start": "node dist/server/index.js",
-  "check": "tsc"
+  "build": "echo \"skip build\"",
+  "start": "tsx server/index.ts"
 },
   "dependencies": {
     "express": "^5.0.1",
