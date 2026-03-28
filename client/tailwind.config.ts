@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
+
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}"
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
+
   theme: {
     extend: {
       borderRadius: {
@@ -12,81 +14,83 @@ module.exports = {
         md: ".375rem",
         sm: ".1875rem",
       },
+
       colors: {
-        background: "hsl(var(--background) / <alpha-value>)",
-        foreground: "hsl(var(--foreground) / <alpha-value>)",
-        border: "hsl(var(--border) / <alpha-value>)",
-        input: "hsl(var(--input) / <alpha-value>)",
+        // ✅ FIXED BASE COLORS (important)
+        background: "hsl(var(--background, 0 0% 100%) / <alpha-value>)",
+        foreground: "hsl(var(--foreground, 222.2 84% 4.9%) / <alpha-value>)",
+        border: "hsl(var(--border, 214.3 31.8% 91.4%) / <alpha-value>)",
+        input: "hsl(var(--input, 214.3 31.8% 91.4%) / <alpha-value>)",
 
         card: {
-          DEFAULT: "hsl(var(--card) / <alpha-value>)",
-          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
-          border: "hsl(var(--card-border) / <alpha-value>)",
+          DEFAULT: "hsl(var(--card, 0 0% 100%) / <alpha-value>)",
+          foreground: "hsl(var(--card-foreground, 222.2 84% 4.9%) / <alpha-value>)",
+          border: "hsl(var(--card-border, 214.3 31.8% 91.4%) / <alpha-value>)",
         },
 
         popover: {
-          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
-          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
-          border: "hsl(var(--popover-border) / <alpha-value>)",
+          DEFAULT: "hsl(var(--popover, 0 0% 100%) / <alpha-value>)",
+          foreground: "hsl(var(--popover-foreground, 222.2 84% 4.9%) / <alpha-value>)",
+          border: "hsl(var(--popover-border, 214.3 31.8% 91.4%) / <alpha-value>)",
         },
 
         primary: {
-          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
-          border: "var(--primary-border)",
+          DEFAULT: "hsl(var(--primary, 221.2 83.2% 53.3%) / <alpha-value>)",
+          foreground: "hsl(var(--primary-foreground, 210 40% 98%) / <alpha-value>)",
+          border: "var(--primary-border, hsl(221.2 83.2% 53.3%))",
         },
 
         secondary: {
-          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
-          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
-          border: "var(--secondary-border)",
+          DEFAULT: "hsl(var(--secondary, 210 40% 96.1%) / <alpha-value>)",
+          foreground: "hsl(var(--secondary-foreground, 222.2 47.4% 11.2%) / <alpha-value>)",
+          border: "var(--secondary-border, hsl(210 40% 96.1%))",
         },
 
         muted: {
-          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
-          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
-          border: "var(--muted-border)",
+          DEFAULT: "hsl(var(--muted, 210 40% 96.1%) / <alpha-value>)",
+          foreground: "hsl(var(--muted-foreground, 215.4 16.3% 46.9%) / <alpha-value>)",
+          border: "var(--muted-border, hsl(210 40% 96.1%))",
         },
 
         accent: {
-          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
-          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
-          border: "var(--accent-border)",
+          DEFAULT: "hsl(var(--accent, 210 40% 96.1%) / <alpha-value>)",
+          foreground: "hsl(var(--accent-foreground, 222.2 47.4% 11.2%) / <alpha-value>)",
+          border: "var(--accent-border, hsl(210 40% 96.1%))",
         },
 
         destructive: {
-          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
-          border: "var(--destructive-border)",
+          DEFAULT: "hsl(var(--destructive, 0 84.2% 60.2%) / <alpha-value>)",
+          foreground: "hsl(var(--destructive-foreground, 210 40% 98%) / <alpha-value>)",
+          border: "var(--destructive-border, hsl(0 84.2% 60.2%))",
         },
 
-        ring: "hsl(var(--ring) / <alpha-value>)",
+        ring: "hsl(var(--ring, 221.2 83.2% 53.3%) / <alpha-value>)",
 
         chart: {
-          "1": "hsl(var(--chart-1) / <alpha-value>)",
-          "2": "hsl(var(--chart-2) / <alpha-value>)",
-          "3": "hsl(var(--chart-3) / <alpha-value>)",
-          "4": "hsl(var(--chart-4) / <alpha-value>)",
-          "5": "hsl(var(--chart-5) / <alpha-value>)",
+          "1": "hsl(var(--chart-1, 12 76% 61%) / <alpha-value>)",
+          "2": "hsl(var(--chart-2, 173 58% 39%) / <alpha-value>)",
+          "3": "hsl(var(--chart-3, 197 37% 24%) / <alpha-value>)",
+          "4": "hsl(var(--chart-4, 43 74% 66%) / <alpha-value>)",
+          "5": "hsl(var(--chart-5, 27 87% 67%) / <alpha-value>)",
         },
 
         sidebar: {
-          ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
-          DEFAULT: "hsl(var(--sidebar) / <alpha-value>)",
-          foreground: "hsl(var(--sidebar-foreground) / <alpha-value>)",
-          border: "hsl(var(--sidebar-border) / <alpha-value>)",
+          DEFAULT: "hsl(var(--sidebar, 0 0% 100%) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-foreground, 222.2 84% 4.9%) / <alpha-value>)",
+          border: "hsl(var(--sidebar-border, 214.3 31.8% 91.4%) / <alpha-value>)",
+          ring: "hsl(var(--sidebar-ring, 221.2 83.2% 53.3%) / <alpha-value>)",
         },
 
         "sidebar-primary": {
-          DEFAULT: "hsl(var(--sidebar-primary) / <alpha-value>)",
-          foreground: "hsl(var(--sidebar-primary-foreground) / <alpha-value>)",
-          border: "var(--sidebar-primary-border)",
+          DEFAULT: "hsl(var(--sidebar-primary, 221.2 83.2% 53.3%) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-primary-foreground, 210 40% 98%) / <alpha-value>)",
+          border: "var(--sidebar-primary-border, hsl(221.2 83.2% 53.3%))",
         },
 
         "sidebar-accent": {
-          DEFAULT: "hsl(var(--sidebar-accent) / <alpha-value>)",
-          foreground: "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
-          border: "var(--sidebar-accent-border)",
+          DEFAULT: "hsl(var(--sidebar-accent, 210 40% 96.1%) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-accent-foreground, 222.2 47.4% 11.2%) / <alpha-value>)",
+          border: "var(--sidebar-accent-border, hsl(210 40% 96.1%))",
         },
 
         status: {
@@ -98,9 +102,9 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
-        mono: ["var(--font-mono)"],
+        sans: ["var(--font-sans)", "system-ui"],
+        serif: ["var(--font-serif)", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
 
       keyframes: {
